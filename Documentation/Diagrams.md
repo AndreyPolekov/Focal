@@ -2,7 +2,7 @@
 
 ## Use case diagram
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/UseCaseDiagram.pdf)
 
 ## Flow of events
 
@@ -40,26 +40,26 @@
 
 "Show match preview" case
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/ActivityDiagramPr.pdf)
 
 "Show table" case
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/ActivityDiagramTab.pdf)
 
 "Show match results" case
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/ActivityDiagramRes.pdf)
 
 ## Sequence diagrams
 
 "Show match preview" case
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/SequenceDiagramPr.pdf)
 
 "Show table" case
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/SequenceDiagramTab.pdf)
 
 "Show match results" case
 
-![alt text]()
+![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/SequenceDiagramRes.pdf)
