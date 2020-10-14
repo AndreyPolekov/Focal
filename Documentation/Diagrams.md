@@ -40,26 +40,26 @@
 
 "Show match preview" case
 
-![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/ActivityDiagramPr.pdf)
+![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/ActivityDiagramPr.png)
 
 "Show table" case
 
-![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/ActivityDiagramTab.pdf)
+![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/ActivityDiagramTab.png)
 
 "Show match results" case
 
-![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/ActivityDiagramRes.pdf)
+![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/ActivityDiagramRes.png)
 
 ## Sequence diagrams
 
 "Show match preview" case
 
-![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/SequenceDiagramPr.pdf)
+![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/SequenceDiagramPr.png)
 
 "Show table" case
 
-![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/SequenceDiagramTab.pdf)
+![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/SequenceDiagramTab.png)
 
 "Show match results" case
 
-![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/SequenceDiagramRes.pdf)
+![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/SequenceDiagramRes.png)
