@@ -2,7 +2,7 @@
 
 ## Use case diagram
 
-![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/UseCaseDiagram.pdf)
+![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/UseCaseDiagram.png)
 
 ## Flow of events
 
