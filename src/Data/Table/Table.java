@@ -1,5 +1,8 @@
 package Data.Table;
 
+import Ratings.CurrentClubRating;
+import Ratings.GlobalClubRating;
+
 import java.util.ArrayList;
 
 
@@ -8,7 +11,6 @@ public class Table {
 
 
 
-    private int uefaPoints;
 
     public ArrayList<Club> getClubs() {
         return clubs;
@@ -42,7 +44,10 @@ public class Table {
         }
         return s;
     }
-    public void setUefaPoints(int uefaPoints) {
-        this.uefaPoints = uefaPoints;
+    public void setRatings() {
+        for (Club club : clubs) {
+            club.globalRating = (new GlobalClubRating(club)).calculate();
+            club.currentRating = (new CurrentClubRating(club)).calculate();
+        }
     }
 }

@@ -1,8 +1,8 @@
-# Diagrams
+# Diagrams (lw3)
 
 ## Use case diagram
 
-![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/UseCaseDiagram.png)
+![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams(lw3)/UseCaseDiagram.png)
 
 ## Flow of events
 
@@ -40,26 +40,26 @@
 
 "Show match preview" case
 
-![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/ActivityDiagramPr.png)
+![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams(lw3)/ActivityDiagramPr.png)
 
 "Show table" case
 
-![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/ActivityDiagramTab.png)
+![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams(lw3)/ActivityDiagramTab.png)
 
 "Show match results" case
 
-![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/ActivityDiagramRes.png)
+![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams(lw3)/ActivityDiagramRes.png)
 
 ## Sequence diagrams
 
 "Show match preview" case
 
-![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/SequenceDiagramPr.png)
+![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams(lw3)/SequenceDiagramPr.png)
 
 "Show table" case
 
-![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/SequenceDiagramTab.png)
+![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams(lw3)/SequenceDiagramTab.png)
 
 "Show match results" case
 
-![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams/SequenceDiagramRes.png)
+![alt text](https://raw.githubusercontent.com/AndreyPolekov/Focal/master/Documentation/Diagrams(lw3)/SequenceDiagramRes.png)

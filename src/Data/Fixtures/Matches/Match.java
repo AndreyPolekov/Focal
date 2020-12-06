@@ -7,6 +7,10 @@ public class Match {
 
     protected Club host, guest;
     protected String date;
+
+
+
+
     protected int matchRating;
 
     public void setHost(Club host) {
@@ -27,5 +31,13 @@ public class Match {
 
     public Club getGuest() {
         return guest;
+    }
+
+    public int getMatchRating() {
+        return matchRating;
+    }
+
+    public void setMatchRating(int matchRating) {
+        this.matchRating = matchRating;
     }
 }

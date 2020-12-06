@@ -32,7 +32,6 @@ public class UefaParser extends TableParser {
                                         .select("td,th")
                                         .get(10)
                                         .text()));
-                        table.setUefaPoints(tournamentRating);
                     }
                     int uefaPoints = (int)(1000 * Float.parseFloat(
                             stringElement
@@ -54,6 +53,10 @@ public class UefaParser extends TableParser {
                     Club club = table.defineClub(clubName);
                     club.uefaPoints = uefaPoints;
                 }
+            }
+            for (Club club : table.getClubs()) {
+                if (club.uefaPoints == 0)
+                    club.uefaPoints = tournamentRating / club.place;
             }
 
             if (next != null)

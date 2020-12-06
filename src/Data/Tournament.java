@@ -2,8 +2,11 @@ package Data;
 
 import Data.Fixtures.Fixtures;
 import Data.Fixtures.Matches.FutureMatch;
+import Data.Fixtures.Matches.Match;
 import Data.Table.Table;
 import Parsers.*;
+import Ratings.GlobalClubRating;
+import Ratings.MatchRating;
 
 public class Tournament {
     private String name;
@@ -33,23 +36,38 @@ public class Tournament {
         }
         parserChain[0].parse();
 
+        table.setRatings();
+
+
+
         /////////////////
-        System.out.println(
-                (FutureMatch) fixtures.getMatchdays().get(9).getMatches().get(3) + "\n\n\n"
-        );
+//        System.out.println(
+//                (FutureMatch) fixtures.getMatchdays().get(9).getMatches().get(3) + "\n\n\n"
+//        );
+//
+        for (Match match:
+                fixtures.getMatchdays().get(10).getMatches()) {
+            Parser p = new MatchParser();
+            p.setTournamentName(name);
+            ((MatchParser)p).setMath((FutureMatch) match);
+            p.parse();
 
-        Parser p = new MatchParser();
-        p.setTournamentName(name);
-        ((MatchParser)p).setMath((FutureMatch) fixtures.getMatchdays().get(9).getMatches().get(3));
-        p.parse();
+            match.setMatchRating((new MatchRating((match))).calculate());
+
+            System.out.println(match);
+        }
+
+        //Match match = fixtures.getMatchdays().get(9).getMatches().get(3);
 
 
-        System.out.println(
-                (FutureMatch) fixtures.getMatchdays().get(9).getMatches().get(3) + "\n\n\n"
-        );
+//
+//
+//        System.out.println(
+//                (FutureMatch) fixtures.getMatchdays().get(9).getMatches().get(3) + "\n\n\n"
+//        );
         ////////////////
 
-        //System.out.println(table + "\n\n\n\n\n");      ////////////////////////////////////////////////
-        //System.out.println(fixtures);      ////////////////////////////////////////////////
+        System.out.println(table + "\n\n\n\n\n");      ////////////////////////////////////////////////
+//        System.out.println(fixtures);      ////////////////////////////////////////////////
     }
 }

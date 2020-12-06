@@ -1,6 +1,7 @@
 package Data.Table;
 
 import Data.Fixtures.Matches.Match;
+import Data.Fixtures.Matches.PastMatch;
 
 import java.util.ArrayList;
 
@@ -26,8 +27,12 @@ public class Club {
     //1vs1
     public int indexPoints = 0;
 
+    //ratings
+    public int globalRating;
+    public int currentRating;
+
     public static int lastMatchesCount = 4;
-    public ArrayList<Match> lastMatches = new ArrayList<Match>();
+    public ArrayList<PastMatch> lastMatches = new ArrayList<PastMatch>();
 
 
     @Override
@@ -45,11 +50,13 @@ public class Club {
                 "\t" + points +
                 "\t" + eloPoints +
                 "\t" + uefaPoints +
-                "\t" + indexPoints;
-        for (Match m :
-                lastMatches) {
-            s = s + "\n" + m;
-        }
+                "\t" + indexPoints +
+                "\t" + globalRating +
+                "\t" + currentRating;
+//        for (Match m :
+//                lastMatches) {
+//            s = s + "\n" + m;
+//        }
         return s;
     }
     public static int getEqualCharCount(String s1, String s2) {

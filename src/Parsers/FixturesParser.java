@@ -90,7 +90,7 @@ public class FixturesParser extends Parser {
                                 match.getGuest().name.equals(club.name)
                         ) {
                             if (match instanceof PastMatch) {
-                                club.lastMatches.add(match);
+                                club.lastMatches.add((PastMatch)match);
                                 matchIndex++;
                             }
                             break;
