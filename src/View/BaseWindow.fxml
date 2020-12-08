@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.BaseWindowController">
+   <children>
+      <AnchorPane prefHeight="62.0" prefWidth="600.0">
+         <children>
+            <MenuButton fx:id="mainMenuButton" alignment="CENTER" layoutX="538.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="62.0" stylesheets="@MainMenuButton.css">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Tournaments" />
+                <MenuItem mnemonicParsing="false" text="Recommendations" />
+              </items>
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/MenuIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MenuButton>
+            <Rectangle fill="#b2b2b2" height="62.0" layoutX="185.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="354.0" />
+            <Rectangle fill="#909090" height="62.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="186.0" />
+            <ImageView fitHeight="52.0" fitWidth="68.0" layoutX="10.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="84.0" prefHeight="62.0" prefWidth="101.0" text="Focal">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+            <Label fx:id="mainLabel" alignment="CENTER" layoutX="185.0" prefHeight="62.0" prefWidth="354.0" text="Tournaments">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="62.0" prefHeight="389.0" prefWidth="120.0">
+         <children>
+            <Rectangle fill="#cdcdcd" height="389.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="120.0" />
+            <ToggleButton fx:id="PremierLeagueButton" alignment="BOTTOM_CENTER" contentDisplay="TOP" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="120.0" selected="true" text="Premier League">
+               <graphic>
+                  <ImageView fitHeight="53.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/EnglishPremierLeague.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </ToggleButton>
+            <ToggleButton fx:id="LaLigaButton" contentDisplay="TOP" graphicTextGap="0.0" layoutY="80.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="120.0" text="La Liga">
+               <graphic>
+                  <ImageView fitHeight="54.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/LaLiga.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </ToggleButton>
+            <ToggleButton fx:id="BundesligaButton" contentDisplay="TOP" graphicTextGap="0.0" layoutY="160.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="120.0" text="Bundesliga">
+               <graphic>
+                  <ImageView fitHeight="47.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/Bundesliga.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </ToggleButton>
+            <ToggleButton fx:id="SerieAButton" contentDisplay="TOP" graphicTextGap="0.0" layoutY="240.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="120.0" text="Serie A">
+               <graphic>
+                  <ImageView fitHeight="54.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/SerieA.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </ToggleButton>
+            <ToggleButton fx:id="Ligue1Button" contentDisplay="TOP" graphicTextGap="0.0" layoutY="320.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="120.0" text="Ligue 1">
+               <graphic>
+                  <ImageView fitHeight="54.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/Ligue1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </ToggleButton>
+         </children>
+      </AnchorPane>
+      <TabPane fx:id="tabs" layoutX="120.0" layoutY="62.0" prefHeight="400.0" prefWidth="482.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Table">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+               </content>
+          </Tab>
+          <Tab text="Fixtures">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

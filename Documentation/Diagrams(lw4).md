@@ -8,7 +8,7 @@
 
 1. Bridge (as part of MVC)
 2. Facade (classes that extend class Parser - facade for jsoup library)
-3. Template method (Parsers (method parse()) and Ratings (method calculate()) classes)
+3. Template method (Model.Parsers (method parse()) and Model.Ratings (method calculate()) classes)
 4. Chain of responsibility (class Parser contains attribute "next")
 
 ## Machine state diagram
