@@ -6,6 +6,9 @@ public class FutureMatch extends Match {
 
 
     private String time;
+
+
+
     private boolean postpone = false;
 
 
@@ -60,5 +63,13 @@ public class FutureMatch extends Match {
 
     public void setDrawPercent(int drawPercent) {
         this.drawPercent = drawPercent;
+    }
+
+    public boolean isPostpone() {
+        return postpone;
+    }
+
+    public String getTime() {
+        return time;
     }
 }

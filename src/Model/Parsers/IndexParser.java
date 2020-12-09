@@ -26,8 +26,7 @@ public class IndexParser extends TableParser {
                                     .get(tournamentElement.siblingIndex() + 2)
                                     .select("div[class=\"team\"]")
                     ) {
-                        System.out.println(clubElement.text());////////////////////////
-                        parseClub(clubElement.text());
+                        parseClub(clubElement);
                     }
                     break;
                 }
@@ -40,9 +39,9 @@ public class IndexParser extends TableParser {
             e.printStackTrace();
         }
     }
-    public void parseClub(String clubName) throws IOException {
-        Document document = Jsoup.connect(getClubUrl(clubName)).get();
-        System.out.println("+");
+    public void parseClub(Element clubElement) throws IOException {
+        String clubName = clubElement.text();
+        //Document document = Jsoup.connect(getClubUrl(clubName)).get();
 
         if (clubName.equals("Tottenham Hotspur"))
             clubName = "Tottenham";
@@ -54,12 +53,17 @@ public class IndexParser extends TableParser {
             clubName = "West Brom";
 
         Club club = table.defineClub(clubName);
-        club.indexPoints = Integer.parseInt(
-                document
-                        .select("div[class=\"pro-profile-tab-num\"][id=\"indexCounter\"]")
-                        .get(0)
-                        .text()
-        );
+//        club.indexPoints = Integer.parseInt(
+//                document
+//                        .select("div[class=\"pro-profile-tab-num\"][id=\"indexCounter\"]")
+//                        .get(0)
+//                        .text()
+//        );
+        club.imageUrl =
+                clubElement
+                    .select("div[class=\"img-container lazyload\"]")
+                    .get(0)
+                    .attr("data-bg");
     }
     public String getTournamentUrl() {
         return "https://one-versus-one.com/en/teams#league-39";

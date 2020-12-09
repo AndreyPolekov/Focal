@@ -25,6 +25,7 @@ public class Club {
 
     //1vs1
     public int indexPoints = 0;
+    public String imageUrl;
 
     //ratings
     public int globalRating;
@@ -51,7 +52,8 @@ public class Club {
                 "\t" + uefaPoints +
                 "\t" + indexPoints +
                 "\t" + globalRating +
-                "\t" + currentRating;
+                "\t" + currentRating +
+                "\t" + imageUrl;
 //        for (Match m :
 //                lastMatches) {
 //            s = s + "\n" + m;
@@ -82,4 +84,43 @@ public class Club {
         return equalCharCount;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getPlace() {
+        return place;
+    }
+
+    public int getMatches() {
+        return matches;
+    }
+
+    public int getWins() {
+        return wins;
+    }
+
+    public int getDraws() {
+        return draws;
+    }
+
+    public int getLoses() {
+        return loses;
+    }
+
+    public int getGoalsFor() {
+        return goalsFor;
+    }
+
+    public int getGoalsAgainst() {
+        return goalsAgainst;
+    }
+
+    public int getGoalsDifference() {
+        return goalsDifference;
+    }
+
+    public int getPoints() {
+        return points;
+    }
 }

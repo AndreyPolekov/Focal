@@ -1,14 +1,14 @@
 package Model.Data;
 
 import Model.Data.Fixtures.Fixtures;
-import Model.Data.Fixtures.Matches.FutureMatch;
-import Model.Data.Fixtures.Matches.Match;
 import Model.Data.Table.Table;
 import Model.Parsers.*;
-import Model.Ratings.MatchRating;
 
 public class Tournament {
     private String name;
+
+
+
     private Table table = new Table();
     private Fixtures fixtures = new Fixtures();
 
@@ -19,7 +19,7 @@ public class Tournament {
                 new StatisticsParser(),
                 new EloParser(),
                 new UefaParser(),
-                //new IndexParser(),
+                new IndexParser(),
                 new FixturesParser()
         };
         for (int i = 0; i < parserChain.length; i++) {
@@ -44,17 +44,17 @@ public class Tournament {
 //                (FutureMatch) fixtures.getMatchdays().get(9).getMatches().get(3) + "\n\n\n"
 //        );
 //
-        for (Match match:
-                fixtures.getMatchdays().get(10).getMatches()) {
-            Parser p = new MatchParser();
-            p.setTournamentName(name);
-            ((MatchParser)p).setMath((FutureMatch) match);
-            p.parse();
-
-            match.setMatchRating((new MatchRating((match))).calculate());
-
-            System.out.println(match);
-        }
+//        for (Match match:
+//                fixtures.getMatchdays().get(10).getMatches()) {
+//            Parser p = new MatchParser();
+//            p.setTournamentName(name);
+//            ((MatchParser)p).setMath((FutureMatch) match);
+//            p.parse();
+//
+//            match.setMatchRating((new MatchRating((match))).calculate());
+//
+//            System.out.println(match);
+//        }
 
         //Match match = fixtures.getMatchdays().get(9).getMatches().get(3);
 
@@ -68,5 +68,13 @@ public class Tournament {
 
         System.out.println(table + "\n\n\n\n\n");      ////////////////////////////////////////////////
 //        System.out.println(fixtures);      ////////////////////////////////////////////////
+    }
+
+    public Table getTable() {
+        return table;
+    }
+
+    public Fixtures getFixtures() {
+        return fixtures;
     }
 }

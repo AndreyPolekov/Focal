@@ -1,11 +1,11 @@
 package Controller;
 
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
+import Model.Data.Tournament;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class BaseWindowController {
 
@@ -41,8 +41,15 @@ public class BaseWindowController {
 
     private ToggleButton[] tournamentButtons;
 
+    private Tournament[] tournaments;
+
     @FXML
     void initialize() {
+        tournaments = new Tournament[] {
+                new Tournament("EnglishPremierLeague")
+//                new Tournament("EnglishPremierLeague")
+//                new Tournament("EnglishPremierLeague")
+        };
         tournamentButtons = new ToggleButton[] {
                 PremierLeagueButton,
                 LaLigaButton,
@@ -73,14 +80,32 @@ public class BaseWindowController {
                 changeTabs();
             });
         }
+        changeTabs();
     }
 
     public Tab createTab(String name) {
+        PageController pageController = null;
+        switch (name) {
+            case "Table":
+                pageController = new TablePageController();
+                break;
+            case "Fixtures":
+                pageController = new FixturesPageController();
+                break;
+            case "Last matches":
+                pageController = null;//////////////////////////////
+                break;
+            case "Upcoming matches":
+                pageController = null;//////////////////////////////
+                break;
+        }
+        pageController.setTournaments(tournaments);
+        pageController.setTournamentButtons(tournamentButtons);
+
         Tab tab = new Tab(name);
         ScrollPane scrollPane = new ScrollPane();
-        AnchorPane anchorPane = new AnchorPane();   //future implementation
 
-        scrollPane.setContent(anchorPane);
+        scrollPane.setContent(pageController.getPane());
         tab.setContent(scrollPane);
         return tab;
     }
@@ -102,6 +127,16 @@ public class BaseWindowController {
         }
     }
     public void changeButtons(ToggleButton currentButton) {
+        int activeButtonCount = 0;
+        for (ToggleButton tournamentButton: tournamentButtons) {
+            if (tournamentButton.isSelected()) {
+                activeButtonCount++;
+            }
+        }
+        if (activeButtonCount == 0) {
+            currentButton.setSelected(true);
+            return;
+        }
         if (mainLabel.getText().equals("Tournaments")) {
             for (ToggleButton tournamentButton: tournamentButtons) {
                 if (tournamentButton != currentButton) {

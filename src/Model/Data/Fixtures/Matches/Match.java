@@ -6,6 +6,9 @@ public class Match {
 
 
     protected Club host, guest;
+
+
+
     protected String date;
 
 
@@ -31,6 +34,10 @@ public class Match {
 
     public Club getGuest() {
         return guest;
+    }
+
+    public String getDate() {
+        return date;
     }
 
     public int getMatchRating() {
