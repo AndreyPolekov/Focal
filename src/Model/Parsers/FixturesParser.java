@@ -62,7 +62,7 @@ public class FixturesParser extends Parser {
                         ((FutureMatch)match).setTime(column2);
                         if (!isCurrentMatchdayFound) {
                             isCurrentMatchdayFound = true;
-                            fixtures.setCurrentMatchday(externalMatchdayIndex);
+                            fixtures.setCurrentMatchday(externalMatchdayIndex + 1);
                         }
                     }
                 }

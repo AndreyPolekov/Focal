@@ -29,5 +29,8 @@ public class PastMatch extends Match {
                 "\t" + host.name +
                 "\t" + hostGoals + "-" + guestGoals +
                 "\t" + guest.name;
+//                "\t" + host.currentRating +
+//                "\t" + guest.currentRating +
+//                "\t" + matchRating;
     }
 }

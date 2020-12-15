@@ -46,9 +46,9 @@ public class BaseWindowController {
     @FXML
     void initialize() {
         tournaments = new Tournament[] {
-                new Tournament("EnglishPremierLeague")
-//                new Tournament("EnglishPremierLeague")
-//                new Tournament("EnglishPremierLeague")
+                new Tournament("EnglishPremierLeague"),
+                new Tournament("LaLiga"),
+                new Tournament("Bundesliga")
         };
         tournamentButtons = new ToggleButton[] {
                 PremierLeagueButton,
@@ -93,10 +93,10 @@ public class BaseWindowController {
                 pageController = new FixturesPageController();
                 break;
             case "Last matches":
-                pageController = null;//////////////////////////////
+                pageController = new LastMatchesPageController();
                 break;
             case "Upcoming matches":
-                pageController = null;//////////////////////////////
+                pageController = new UpcomingMatchesPageController();
                 break;
         }
         pageController.setTournaments(tournaments);

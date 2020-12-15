@@ -4,7 +4,6 @@ import Model.Data.Table.Club;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
 import java.io.IOException;
 
@@ -12,26 +11,29 @@ public class IndexParser extends TableParser {
     public void parse() {
         try {
             Document document = Jsoup.connect(getTournamentUrl()).get();
-            Elements tournamentElements =
+
+            int tournamentIndex = 0;
+            for (Element tournamentElement :
                     document
                             .select("div[class=\"teams-page-blocks\"]")
                             .get(0)
-                            .select("div");
-            for (Element tournamentElement : tournamentElements) {
-                if (    tournamentElement.attr("class").equals("teams-league-title d-md-flex d-sm-block") &&
-                        tournamentElement.text().contains(getTournamentName())
-                ) {
-                    for (Element clubElement:
-                            tournamentElements
-                                    .get(tournamentElement.siblingIndex() + 2)
-                                    .select("div[class=\"team\"]")
-                    ) {
-                        parseClub(clubElement);
-                    }
+                            .select("div[class=\"teams-league-title d-md-flex d-sm-block\"]")
+            ) {
+                if (tournamentElement.text().contains(getTournamentName())) {
                     break;
                 }
+                tournamentIndex++;
             }
-
+            for (Element clubElement :
+                    document
+                            .select("div[class=\"teams-page-blocks\"]")
+                            .get(0)
+                            .select("div[class=\"teams-blocks\"]")
+                            .get(tournamentIndex)
+                            .select("div[class=\"team\"]")
+            ) {
+                parseClub(clubElement);
+            }
             if (next != null)
                 next.parse();
         } catch (Exception e) {
@@ -52,6 +54,16 @@ public class IndexParser extends TableParser {
         if (clubName.equals("West Bromwich Albion"))
             clubName = "West Brom";
 
+        if (clubName.equals("Real Valladolid"))
+            clubName = "Valladolid";
+        if (clubName.equals("Deportivo Alaves"))
+            clubName = "Alaves";
+        if (clubName.equals("Valencia CF"))
+            clubName = "Valencia";
+
+        if (clubName.equals("Arminia Bielefeld"))
+            clubName = "Bielefeld";
+
         Club club = table.defineClub(clubName);
 //        club.indexPoints = Integer.parseInt(
 //                document
@@ -66,7 +78,7 @@ public class IndexParser extends TableParser {
                     .attr("data-bg");
     }
     public String getTournamentUrl() {
-        return "https://one-versus-one.com/en/teams#league-39";
+        return "https://one-versus-one.com/en/teams";
     }
     public String getClubUrl(String clubName) {
         return "https://one-versus-one.com/en/teams/" + clubName.toLowerCase().replace(' ', '-');

@@ -23,6 +23,18 @@ public class FutureMatch extends Match {
 
     private int hostPercent, guestPercent, drawPercent;
 
+    public int getHostPercent() {
+        return hostPercent;
+    }
+
+    public int getGuestPercent() {
+        return guestPercent;
+    }
+
+    public int getDrawPercent() {
+        return drawPercent;
+    }
+
     public void setPostpone(boolean postpone) {
         this.postpone = postpone;
     }
@@ -71,5 +83,9 @@ public class FutureMatch extends Match {
 
     public String getTime() {
         return time;
+    }
+
+    public void setJointMatches(ArrayList<PastMatch> jointMatches) {
+        this.jointMatches = jointMatches;
     }
 }

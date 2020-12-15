@@ -15,6 +15,15 @@ public class Match {
 
 
     protected int matchRating;
+    protected int ratingSum;
+
+    public int getRatingSum() {
+        return ratingSum;
+    }
+
+    public void setRatingSum(int ratingSum) {
+        this.ratingSum = ratingSum;
+    }
 
     public void setHost(Club host) {
         this.host = host;

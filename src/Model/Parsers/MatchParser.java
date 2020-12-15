@@ -8,6 +8,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.util.ArrayList;
+
 public class MatchParser extends Parser {
     private FutureMatch futureMatch;
 
@@ -17,6 +19,8 @@ public class MatchParser extends Parser {
     public void parse() {
         try {
             Document document = Jsoup.connect(getTournamentUrl()).get();
+
+            futureMatch.setJointMatches(new ArrayList<PastMatch>());
             int matchIndex = 0;
             for (Element matchElement :
                     document
@@ -135,10 +139,88 @@ public class MatchParser extends Parser {
             }
         }
         if (tournamentName.equals("LaLiga")) {
-
+            switch (club.name) {
+                case "Real Sociedad":
+                    return "Real_Sociedad_San_Sebastian";
+                case "Atletico Madrid":
+                    return "Atletico_Madrid";
+                case "Real Madrid":
+                    return "Real_Madrid";
+                case "Villarreal":
+                    return "Villarreal_CF";
+                case "FC Sevilla":
+                    return "FC_Sevilla";
+                case "Granada":
+                    return "Granada_CF";
+                case "Cadiz":
+                    return "Cadiz_CF";
+                case "FC Barcelona":
+                    return "FC_Barcelona";
+                case "Celta Vigo":
+                    return "Real_Celta_de_Vigo";
+                case "Real Betis":
+                    return "Real_Betis_Sevilla";
+                case "Eibar":
+                    return "SD_Eibar";
+                case "Valencia":
+                    return "FC_Valencia";
+                case "Athletic Bilbao":
+                    return "Athletic_Bilbao";
+                case "Elche":
+                    return "Elche_CF";
+                case "Alaves":
+                    return "CD_Alaves_Vitoria";
+                case "Getafe":
+                    return "Getafe_CF";
+                case "Valladolid":
+                    return "Real_Valladolid";
+                case "Levante":
+                    return "Levante_UD_Valencia";
+                case "Huesca":
+                    return "SD_Huesca";
+                case "Osasuna":
+                    return "Atletico_Osasuna_Pamplona";
+            }
         }
         if (tournamentName.equals("Bundesliga")) {
-
+            switch (club.name) {
+                case "Leverkusen":
+                    return "Bayer_Leverkusen";
+                case "Bayern Munich":
+                    return "Bayern_Muenchen";
+                case "RB Leipzig":
+                    return "RB_Leipzig";
+                case "Wolfsburg":
+                    return "VfL_Wolfsburg";
+                case "Dortmund":
+                    return "Borussia_Dortmund";
+                case "Union Berlin":
+                    return "Union_Berlin";
+                case "Stuttgart":
+                    return "VfB_Stuttgart";
+                case "Monchengladbach":
+                    return "Borussia_Moenchengladbach";
+                case "E. Frankfurt":
+                    return "Eintracht_Frankfurt";
+                case "FC Augsburg":
+                    return "FC_Augsburg";
+                case "Hertha Berlin":
+                    return "Hertha_BSC_Berlin";
+                case "Hoffenheim":
+                    return "1899_Hoffenheim";
+                case "Werder Bremen":
+                    return "Werder_Bremen";
+                case "Freiburg":
+                    return "Freiburger_SC";
+                case "FC Koln":
+                    return "1_FC_Koeln";
+                case "Bielefeld":
+                    return "DSC_Arminia_Bielefeld";
+                case "FSV Mainz":
+                    return "FSV_Mainz";
+                case "Schalke 04":
+                    return "Schalke_04";
+            }
         }
         return null;
     }

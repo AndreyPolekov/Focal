@@ -39,10 +39,3 @@ public class TablePageController extends PageController {
         return pane;
     }
 }
-
-//    ImageView imageView = new ImageView();
-//    Image image = new Image("https://1vs1-7f65.kxcdn.com/img/teams_new/20-small.png");
-//        imageView.setX(100);
-//                imageView.setFitWidth(100);
-//                imageView.setImage(image);
-//        pane.getChildren().add(imageView);

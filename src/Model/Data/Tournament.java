@@ -66,7 +66,7 @@ public class Tournament {
 //        );
         ////////////////
 
-        System.out.println(table + "\n\n\n\n\n");      ////////////////////////////////////////////////
+//        System.out.println(table + "\n\n\n\n\n");      ////////////////////////////////////////////////
 //        System.out.println(fixtures);      ////////////////////////////////////////////////
     }
 
@@ -77,4 +77,9 @@ public class Tournament {
     public Fixtures getFixtures() {
         return fixtures;
     }
+
+    public String getName() {
+        return name;
+    }
+
 }
